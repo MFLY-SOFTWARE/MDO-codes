@@ -70,24 +70,17 @@ class MflyOpt(Assembly):
 		# Creating instances for components
 		self.add('config',Configuration_rect())
 		self.add('Weight_buildup',Weight_buildup_rect())
-		#self.add('CWSolver', FixedPointIterator())
 		self.add('Static_margin',Static_margin())
 		#self.add('CLCDiSolver',CLCDiSolver())
 		self.add('CDp',Parasitic_drag())
 		self.add('simRun',Runway_sim())
-		#self.add('SPA',ShortPeriodApprox())
 		self.add('GenPlot',GenPlot())
 		
 
-		# Setting up the CWSolver x_cg (iterate till x_cg agrees)
-		#self.CWSolver.workflow.add(['config','Weight_buildup'])
-		#self.CWSolver.add_parameter('config.x_cg', low=0.00, high = 3.50)
-		#self.CWSolver.add_constraint('Weight_buildup.x_cg/12 = config.x_cg')
-		#self.CWSolver.tolerance = .00001
+	
 
 
 		# Connect & passthrough manually
-		#self.connect('b_w',['config.b_w','Weight_buildup.b_w','simRun.b_w','GenPlot.b_w'])
 		self.connect('b_w',['config.b_w','Weight_buildup.b_w','simRun.b_w','GenPlot.b_w'])
 		self.connect('AR_w',['config.AR_w','Static_margin.AR_w','simRun.AR_w'])
 		self.connect('c_vt',['config.c_vt','Weight_buildup.c_vt','CDp.c_vt','GenPlot.c_vt'])
@@ -121,17 +114,14 @@ class MflyOpt(Assembly):
 		
 		self.connect('Weight_buildup.W_0',['simRun.W_0'])
 		self.connect('Weight_buildup.x_cg',['simRun.x_cg','Static_margin.x_cg','GenPlot.x_cg'])
-		#self.connect('Weight_buildup.I_y',['SPA.I_y'])
+	
 
 
 		# CDp's outputs
 
 		self.connect('CDp.Cd_p',['simRun.Cd_p'])
 
-		# simRun's outputs
-		#self.connect('simRun.V_takeoff',['SPA.V'])
-		#self.connect('simRun.K',['SPA.K'])
-		#self.connect('simRun.CL',['SPA.CL'])
+		
 
 
 
@@ -153,7 +143,7 @@ class MflyOpt(Assembly):
 
 		# Dimension constraint
 		self.driver.add_constraint('(x_tLE+max(c_vt,c_ht)+0.373) + b_w + max(1.20,config.b_vt+Hgt_fuse/12) - 14.583<= 0.0')   #assume height = 1.20ft
-		#self.driver.add_constraint('(x_tLE+max(c_vt,c_ht)+0.373) + b_w + 1.20 - 14.583<= 0.0')     #assume height = 1.20ft
+		
 		
 		# Total weight constraint
 		self.driver.add_constraint('Weight_buildup.W_0  <= 65.0')
@@ -161,9 +151,6 @@ class MflyOpt(Assembly):
 		# Static Margin constraint
 		self.driver.add_constraint('Static_margin.SM - 0.13 >= 0.0')
 		
-		# Dynamic stanility constaints
-		#self.driver.add_constraint('SPA.zeta_sp >= 0.25')
-		#self.driver.add_constraint('SPA.zeta_sp <= 2.00')
 	
 
 
