@@ -2,7 +2,7 @@ from openmdao.main.api import Component, convert_units
 from openmdao.lib.datatypes.api import Float, Int, Enum
 
 class Configuration_rect(Component):
-        """Generating Geometric variables (rectangular wing & conventional tail)."""
+        """Generating Geometric variables (rectangular wing & conventional tail)"""
         """x-position of fuselage start = 0"""
 
 
