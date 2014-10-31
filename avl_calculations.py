@@ -3,14 +3,8 @@ from openmdao.lib.datatypes.api import Float
 import math
 
 class AVL_Calculations (Component):
-	# get values in terms of front of plane, wont avl need in terms of wing root?
-	# degrees or radians?
-
-	# reference point (instead of hard coding)
-	x_origin = Float(1.0, iotype='in', desc='origin x towards tail (plane tip)')
-	y_origin = Float(1.0, iotype='in', desc='origin y towards right wing (plane tip)')
-	z_origin = Float(1.0, iotype='in', desc='origin z straight up (plane tip)')
-
+	# consider the origin at the nose of the fuselage (0,0,0)
+	# x points towards tail, y points out of right wing, z points straight up
 	# wing geometry inputs, consider all geometries start at wing root for now
 	xle_root = Float(1.0, iotype='in', desc='x distance to wing root from plane tip')
 	wingspan = Float(1.0, iotype='in', desc='wing tip to wing tip distance')
