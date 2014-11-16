@@ -80,6 +80,11 @@ class AVLSurface:
 		self.name = name
 		self.nchordwise = nchordwise
 		self.cspace = cspace
-				
-	
-	
+		self.nspanwise = nspanwise
+		self.sspace = sspace
+		self.xscale = xscale
+		self.yscale = yscale
+		self.zscale = zscale
+		self.sections = sections
+		self.isyduplicate = isyduplicate
+		self.yduplicate = yduplicate

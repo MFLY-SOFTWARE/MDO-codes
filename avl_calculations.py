@@ -2,13 +2,16 @@ from openmdao.main.api import Component
 from openmdao.lib.datatypes.api import Float
 import math
 
-class AVL_Calculations (Component):
+# include twist (angle of incidence)
+# find how to link avl_geometry and these output variables
+
+class AVLCalc (Component):
 	# consider the origin at the nose of the fuselage (0,0,0)
 	# x points towards tail, y points out of right wing, z points straight up
 	# wing/tail geometry inputs, consider all geometries start at wing/tail root for now
-	xle_root_wing = Float(1.0, iotype='in', desc='x distance to wing root from plane tip')
-	span_wing = Float(1.0, iotype='in', desc='wing tip to wing tip distance')
-	chord_root_wing = Float(1.0, iotype='in', desc='chord length at wing root')
+	xle_root_wing = Float(1.0, iotype='in', desc='x distance to wing root from plane tip') #
+	span_wing = Float(1.0, iotype='in', desc='wing tip to wing tip distance') #
+	chord_root_wing = Float(1.0, iotype='in', desc='chord length at wing root') #
 	sweeping_angle_wing = Float(1.0, iotype='in', desc='sweeping angle at wing root')
 	taper_ratio_wing = Float(1.0, iotype='in', desc='wing taper ratio')
 	dihedral_wing = Float(1.0, iotype='in', desc='dihedral angle at wing root')

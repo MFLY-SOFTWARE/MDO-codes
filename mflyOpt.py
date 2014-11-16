@@ -10,7 +10,7 @@ from static_margin import Static_margin
 #from CLCDi import CLCDiSolver
 from parasitic_drag import Parasitic_drag
 from runway_sim import Runway_sim
-from shortperiodapprox import ShortPeriodApprox
+#from shortperiodapprox import ShortPeriodApprox
 from genplot import GenPlot
 from openmdao.lib.casehandlers.api import JSONCaseRecorder, CSVCaseRecorder
 

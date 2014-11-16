@@ -84,7 +84,7 @@ class AVLGeo(Component):
 					out.write("NACA\n")
 					out.write(str(section.NACA) + "\n")
 					if section.hascontrol == True:
-						out.write("CONTROL\n")
+						out.write("\nCONTROL\n")
 						out.write(str(section.ControlSurface.surface) +
 							"   " + 
 							str(section.ControlSurface.gain) + "   " +
