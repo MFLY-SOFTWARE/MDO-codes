@@ -14,7 +14,7 @@ class AVLGeo(Component):
 	mach = Float(0.0, iotype = 'in', 
 		desc = "Mach number that the geometry will default to")
 	yaxis_symmetry = Enum(
-						"Symmetric", 
+						"Asymmetric", 
 						("Symmetric", "Antisymmetric", "Asymmetric"),
 						iotype = 'in')
 	zaxis_symmetry = Enum(

@@ -20,18 +20,16 @@ import math
 class AVLSurfList (Component):
 
 	# wing geometry
+	wing_nchord = Float(10.0, iotype='in')
+	wing_cspace = Float(1.0, iotype='in')
+	wing_nspan = Float(40.0, iotype='in')
+	wing_sspace = Float(-2.0, iotype='in')
 	# wing root
 	xle_root_wing = Float(0.0, iotype='in')
 	yle_root_wing = Float(0.0, iotype='in')
 	zle_root_wing = Float(0.0, iotype='in')
 	chord_root_wing = Float(1.136, iotype='in')
 	ainc_root_wing = Float(0.0, iotype='in')
-	# wing dihedral start
-	xle_dih_wing = Float(0.0, iotpye='in')
-	yle_dih_wing = Float(0.774, iotype='in')
-	zle_dih_wing = Float(0.0, iotype='in')
-	chord_dih_wing = Float(1.136, iotype='in')
-	ainc_dih_wing = Float(0.0, iotype='in')
 	# wing aileron start
 	xle_ail_start = Float(0.0, iotype='in')
 	yle_ail_start = Float(3.059, iotype='in')
@@ -59,27 +57,63 @@ class AVLSurfList (Component):
 	ail_sgndup = Float(-2.0, iotype='in')
 
 	# horizontal tail geometry
+	htail_nchord = Float(10.0, iotype='in')
+	htail_cspace = Float(1.0, iotype='in')
+	htail_nspan = Float(25.0, iotype='in')
+	htail_sspace = Float(1.0, iotype='in')
 	# horizontal tail root
+	xle_root_htail = Float(3.42, iotype='in')
+	yle_root_htail = Float(0.0, iotype='in')
+	zle_root_htail = Float(.51, iotype='in')
+	chord_root_htail = Float(1.06, iotype='in')
+	ainc_root_htail = Float(0.0, iotype='in')
 	# horizontal tail tip
-	xle_tip_htail = Float(1.0, iotype='in')
-	yle_tip_htail = Float(1.0, iotype='in')
-	zle_tip_htail = Float(1.0, iotype='in')
-	chord_tip_htail = Float(1.0, iotype='in')
+	xle_tip_htail = Float(3.42, iotype='in')
+	yle_tip_htail = Float(1.60, iotype='in')
+	zle_tip_htail = Float(.51, iotype='in')
+	chord_tip_htail = Float(1.06, iotype='in')
+	ainc_tip_htail = Float(0.0, iotype='in')
+	# elevator specifications
+	elev_gain = Float(1.00, iotype='in')
+	elev_xhinge = Float(.5, iotype='in')
+	elev_hvec_x = Float(0.0, iotype='in')
+	elev_hvec_y = Float(1.0, iotype='in')
+	elev_hvec_z = Float(0.0, iotype='in')
+	elev_sgndup = Float(1.0, iotype='in')
 
 	# vertical tail geometry
+	vtail_nchord = Float(10.0, iotype='in')
+	vtail_cspace = Float(1.0, iotype='in')
+	vtail_nspan = Float(10.0, iotype='in')
+	vtail_sspace = Float(0.0, iotype='in')
 	# vertical tail root
+	xle_root_vtail = Float(3.42, iotype='in')
+	yle_root_vtail = Float(1.60, iotype='in')
+	zle_root_vtail = Float(.51, iotype='in')
+	chord_root_vtail = Float(1.06, iotype='in')
+	ainc_root_vtail = Float(0.0, iotype='in')
 	# vertical tail tip
+	xle_tip_vtail = Float(3.42, iotype='in')
+	yle_tip_vtail = Float(1.60, iotype='in')
+	zle_tip_vtail = Float(1.41, iotype='in')
+	chord_tip_vtail = Float(1.06, iotype='in')
+	ainc_tip_vtail = Float(0.0, iotype='in')
+	# rudder specifications
+	rud_gain = Float(1.00, iotype='in')
+	rud_xhinge = Float(.5, iotype='in')
+	rud_hvec_x = Float(0.0, iotype='in')
+	rud_hvec_y = Float(0.0, iotype='in')
+	rud_hvec_z = Float(1.0, iotype='in')
+	rud_sgndup = Float(1.0, iotype='in')
+
+	# multiple tails will come later
 
 	surfaces = List(Slot(AVLSurface), iotype = 'out')
 
 	def execute(self):
 		# MAIN WING SURFACE
-
 		wing_root = AVLSection(self.xle_root_wing, self.yle_root_wing, self.zle_root_wing,
 			self.chord_root_wing, self.ainc_root_wing, 4412)
-
-		wing_dih_start = AVLSection(self.xle_dih_wing, self.yle_dih_wing, self.zle_dih_wing,
-			self.chord_dih_wing, self.ainc_dih_wing, 4412)
 
 		aileron = AVLControlSurface("Aileron", self.ail_gain, self.ail_xhinge, self.ail_hvec_x,
 			self.ail_hvec_y, self.ail_hvec_z, self.ail_sgndup)
@@ -93,32 +127,34 @@ class AVLSurfList (Component):
 		wing_tip = AVLSection(self.xle_tip_wing, self.yle_tip_wing, self.zle_tip_wing,
 			self.chord_tip_wing, self.ainc_tip_wing, 4412)
 
-		main_wing = AVLSurface("Main Wing", 10, 1.0, 40, -2.0, 1.0, 1.0, 1.0, 
-			[wing_root, wing_dih_start, wing_ail_start, wing_ail_end, wing_tip])
+		main_wing = AVLSurface("Main Wing", self.wing_nchord, self.wing_cspace, self.wing_nspan,
+			self.wing_sspace, 1.0, 1.0, 1.0, [wing_root, wing_ail_start, wing_ail_end, wing_tip], True)
 
 		# HORIZONTAL TAIL SURFACE
-		#h_tail = AVLSurface()
-		#h_tail.name = "Horizontal Tail"
+		elevator = AVLControlSurface("Elevator", self.elev_gain, self.elev_xhinge, self.elev_hvec_x,
+			self.elev_hvec_y, self.elev_hvec_z, self.elev_sgndup)
 
-		#h_tail_root = AVLSection()
-		#h_tail_tip = AVLSection()
+		htail_root = AVLSection(self.xle_root_htail, self.yle_root_htail, self.zle_root_htail,
+			self.chord_root_htail, self.ainc_root_htail, 4412, elevator)
 
-		#h_tail.sections = [h_tail_root, h_tail_tip]
+		htail_tip = AVLSection(self.xle_tip_htail, self.yle_tip_htail, self.zle_tip_htail,
+			self.chord_tip_htail, self.ainc_tip_htail, 4412, elevator)
+
+		horizontal_tail = AVLSurface("Horizontal Tail", self.htail_nchord, self.htail_cspace, self.htail_nspan,
+			self.htail_sspace, 1.0, 1.0, 1.0, [htail_root, htail_tip], True)
 
 		# VERTICAL TAIL SURFACE
-		#v_tail = AVLSurface()
-		#v_tail.name = "Vertical Tail"
+		rudder = AVLControlSurface("Rudder", self.rud_gain, self.rud_xhinge, self.rud_hvec_x,
+			self.rud_hvec_y, self.rud_hvec_z, self.rud_sgndup)
 
-		#v_tail_root = AVLSection()
-		#v_tail_tip = AVLSection()
+		vtail_root = AVLSection(self.xle_root_vtail, self.yle_root_vtail, self.zle_root_vtail,
+			self.chord_root_vtail, self.ainc_root_vtail, 4412, rudder)
 
-		#v_tail.sections = [v_tail_root, v_tail_tip]
+		vtail_tip = AVLSection(self.xle_tip_vtail, self.yle_tip_vtail, self.zle_tip_vtail,
+			self.chord_tip_vtail, self.ainc_tip_vtail, 4412, rudder)
 
-		# CONTINUE FROM HERE MA NIGGA
+		vertical_tail = AVLSurface("Vertical Tail", self.vtail_nchord, self.vtail_cspace, self.vtail_nspan,
+			self.vtail_sspace, 1.0, 1.0, 1.0, [vtail_root, vtail_tip], True)
 
-		self.surfaces = [main_wing]
-
-		for section in main_wing.sections[:]:
-			print section.yle
-			print section.ControlSurface.surface
+		self.surfaces = [main_wing, horizontal_tail, vertical_tail]
 		
