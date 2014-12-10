@@ -268,3 +268,58 @@ Nov 15 01:14:49 E GenPlot: Couldn't find metadata for trait bitch
 
 *********** BEGIN NEW LOG ************** (2014-12-09 21:50:08.283373) PID=5103
 
+
+
+*********** BEGIN NEW LOG ************** (2014-12-09 21:52:45.529416) PID=5133
+
+
+
+*********** BEGIN NEW LOG ************** (2014-12-09 21:55:10.352398) PID=5139
+
+Dec 09 21:55:32 E root: Couldn't find metadata for trait wingspan
+Dec 09 21:55:32 E root: Couldn't find metadata for trait vertical tail chord
+Dec 09 21:55:32 E root: Couldn't find metadata for trait horizontal tail chord
+Dec 09 21:55:32 E root: Couldn't find metadata for trait Wing aspect ratio
+Dec 09 21:55:32 E root: Couldn't find metadata for trait wing leading edge position
+Dec 09 21:55:32 E root: Couldn't find metadata for trait tail leading edge position
+Dec 09 21:55:32 E root: Couldn't find metadata for trait fuselage length
+Dec 09 21:55:32 E root: Couldn't find metadata for trait fuselage width
+Dec 09 21:55:32 E root: Couldn't find metadata for trait fuselage height
+Dec 09 21:55:32 E root: Couldn't find metadata for trait payload weight
+Dec 09 21:55:32 E root: Couldn't find metadata for trait payload location
+Dec 09 21:55:32 W driver: The following components will execute EVERY iteration of this workflow (unnecessarily): ['_pseudo_11', '_pseudo_10', '_pseudo_13', '_pseudo_12', '_pseudo_15', '_pseudo_14', '_pseudo_17', '_pseudo_16', 'exec2', 'avlsurflist', '_pseudo_9', '_pseudo_8', 'CDp', '_pseudo_1', '_pseudo_0', '_pseudo_3', '_pseudo_2', '_pseudo_5', '_pseudo_4', '_pseudo_7', '_pseudo_6', 'avlgeogen', 'GenPlot']
+
+
+*********** BEGIN NEW LOG ************** (2014-12-09 21:59:53.731669) PID=6062
+
+Dec 09 22:00:06 E root: Couldn't find metadata for trait wingspan
+Dec 09 22:00:06 E root: Couldn't find metadata for trait vertical tail chord
+Dec 09 22:00:06 E root: Couldn't find metadata for trait horizontal tail chord
+Dec 09 22:00:06 E root: Couldn't find metadata for trait Wing aspect ratio
+Dec 09 22:00:06 E root: Couldn't find metadata for trait wing leading edge position
+Dec 09 22:00:06 E root: Couldn't find metadata for trait tail leading edge position
+Dec 09 22:00:06 E root: Couldn't find metadata for trait fuselage length
+Dec 09 22:00:06 E root: Couldn't find metadata for trait fuselage width
+Dec 09 22:00:06 E root: Couldn't find metadata for trait fuselage height
+Dec 09 22:00:06 E root: Couldn't find metadata for trait payload weight
+Dec 09 22:00:06 E root: Couldn't find metadata for trait payload location
+Dec 09 22:00:06 W driver: The following components will execute EVERY iteration of this workflow (unnecessarily): ['_pseudo_11', '_pseudo_10', '_pseudo_13', '_pseudo_12', '_pseudo_15', '_pseudo_14', '_pseudo_17', '_pseudo_16', 'exec2', 'avlsurflist', '_pseudo_9', '_pseudo_8', 'CDp', '_pseudo_1', '_pseudo_0', '_pseudo_3', '_pseudo_2', '_pseudo_5', '_pseudo_4', '_pseudo_7', '_pseudo_6', 'avlgeogen', 'GenPlot']
+
+
+*********** BEGIN NEW LOG ************** (2014-12-09 22:00:38.744403) PID=6067
+
+Dec 09 22:00:48 E root: Couldn't find metadata for trait wingspan
+Dec 09 22:00:48 E root: Couldn't find metadata for trait vertical tail chord
+Dec 09 22:00:48 E root: Couldn't find metadata for trait horizontal tail chord
+Dec 09 22:00:48 E root: Couldn't find metadata for trait Wing aspect ratio
+Dec 09 22:00:48 E root: Couldn't find metadata for trait wing leading edge position
+Dec 09 22:00:48 E root: Couldn't find metadata for trait tail leading edge position
+Dec 09 22:00:48 E root: Couldn't find metadata for trait fuselage length
+Dec 09 22:00:48 E root: Couldn't find metadata for trait fuselage width
+Dec 09 22:00:48 E root: Couldn't find metadata for trait fuselage height
+Dec 09 22:00:48 E root: Couldn't find metadata for trait payload weight
+Dec 09 22:00:48 E root: Couldn't find metadata for trait payload location
+Dec 09 22:00:48 W driver: The following components will execute EVERY iteration of this workflow (unnecessarily): ['_pseudo_11', '_pseudo_10', '_pseudo_13', '_pseudo_12', '_pseudo_15', '_pseudo_14', '_pseudo_17', '_pseudo_16', 'exec2', 'avlsurflist', '_pseudo_9', '_pseudo_8', 'CDp', '_pseudo_1', '_pseudo_0', '_pseudo_3', '_pseudo_2', '_pseudo_5', '_pseudo_4', '_pseudo_7', '_pseudo_6', 'avlgeogen', 'GenPlot']
+Dec 09 22:01:38 E root: JSON write failed for iteration_case_1.data:
+Dec 09 22:01:38 E root:     avlgeogen.savefile: {'big_endian': False, 'binary': False, 'content_type': '', 'desc': '', 'integer_8': False, 'path': 'geometry.avl', 'platform': 'linux2', 'recordmark_8': False, 'single_precision': False, 'unformatted': False}
+Dec 09 22:01:38 E driver: Can't record case: JSON write failed for iteration_case_1.data: keys ['avlgeogen.savefile']: maximum recursion depth exceeded while calling a Python object

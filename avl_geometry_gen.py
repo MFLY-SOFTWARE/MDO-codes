@@ -3,7 +3,7 @@ from openmdao.lib.datatypes.api import Float
 from openmdao.lib.datatypes.api import Enum
 from openmdao.lib.datatypes.api import List
 from openmdao.lib.datatypes.api import Slot
-from openmdao.lib.datatypes.api import File
+from openmdao.lib.datatypes.api import File, FileRef
 from openmdao.lib.datatypes.api import Str
 from avl_geometry_surface import AVLSurface
 from avl_geometry_surface import AVLSection
@@ -95,8 +95,8 @@ class AVLGeo(Component):
 							str(section.ControlSurface.sgndup) + "\n\n")
 					out.write("\n")
 			out.write("#END")
-			
-			
+			self.savefile = FileRef(path)
+			self.savefile = self.savefile.copy(self)
 	
 	
 						
