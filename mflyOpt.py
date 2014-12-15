@@ -13,6 +13,10 @@ from runway_sim import Runway_sim
 #from shortperiodapprox import ShortPeriodApprox
 from genplot import GenPlot
 from openmdao.lib.casehandlers.api import JSONCaseRecorder, CSVCaseRecorder
+from exec_avl import exec2
+from avl_geometry_gen import AVLGeo
+from avl_geometry_surface import AVLSection, AVLControlSurface, AVLSurface
+from avl_surfaces_list import AVLSurfList
 
 
 class MflyOpt(Assembly):
@@ -75,18 +79,21 @@ class MflyOpt(Assembly):
 		self.add('CDp',Parasitic_drag())
 		self.add('simRun',Runway_sim())
 		self.add('GenPlot',GenPlot())
+		self.add('exec2',exec2())
+		self.add('avlgeogen',AVLGeo())
+		self.add('avlsurflist',AVLSurfList())
 		
 
 	
 
 
 		# Connect & passthrough manually
-		self.connect('b_w',['config.b_w','Weight_buildup.b_w','simRun.b_w','GenPlot.b_w'])
+		self.connect('b_w',['config.b_w','Weight_buildup.b_w','simRun.b_w','GenPlot.b_w','avlgeogen.bref'])
 		self.connect('AR_w',['config.AR_w','Static_margin.AR_w','simRun.AR_w'])
-		self.connect('c_vt',['config.c_vt','Weight_buildup.c_vt','CDp.c_vt','GenPlot.c_vt'])
-		self.connect('c_ht',['config.c_ht','Weight_buildup.c_ht','Static_margin.c_ht','CDp.c_ht','simRun.c_ht','GenPlot.c_ht'])
-		self.connect('x_wLE',['config.x_wLE','Weight_buildup.x_wLE','Static_margin.x_wLE','simRun.x_wLE', 'GenPlot.x_wLE'])
-		self.connect('x_tLE',['config.x_tLE','Weight_buildup.x_tLE','Static_margin.x_tLE','simRun.x_tLE', 'GenPlot.x_tLE'])
+		self.connect('c_vt',['config.c_vt','Weight_buildup.c_vt','CDp.c_vt','GenPlot.c_vt','avlsurflist.chord_root_vtail','avlsurflist.chord_tip_vtail'])
+		self.connect('c_ht',['config.c_ht','Weight_buildup.c_ht','Static_margin.c_ht','CDp.c_ht','simRun.c_ht','GenPlot.c_ht','avlsurflist.chord_root_htail','avlsurflist.chord_tip_htail'])
+		self.connect('x_wLE',['config.x_wLE','Weight_buildup.x_wLE','Static_margin.x_wLE','simRun.x_wLE', 'GenPlot.x_wLE', 'avlsurflist.xle_root_wing', 'avlsurflist.xle_tip_wing', 'avlsurflist.xle_ail_start', 'avlsurflist.xle_ail_end'])
+		self.connect('x_tLE',['config.x_tLE','Weight_buildup.x_tLE','Static_margin.x_tLE','simRun.x_tLE', 'GenPlot.x_tLE', 'avlsurflist.xle_root_htail', 'avlsurflist.xle_tip_htail', 'avlsurflist.xle_root_vtail', 'avlsurflist.xle_tip_vtail'])
 		self.connect('Len_fuse',['Weight_buildup.Len_fuse','Static_margin.Len_fuse','CDp.Len_fuse','GenPlot.Len_fuse'])
 		self.connect('Wid_fuse',['Weight_buildup.Wid_fuse','Static_margin.Wid_fuse','CDp.Wid_fuse','GenPlot.Wid_fuse'])
 		self.connect('Hgt_fuse',['Weight_buildup.Hgt_fuse','CDp.Hgt_fuse','GenPlot.Hgt_fuse'])
@@ -96,16 +103,18 @@ class MflyOpt(Assembly):
 
 		# Adding components into driver's workflow
 		#self.driver.workflow.add(['config','Weight_buildup','Static_margin','CLCDiSolver','CDp','simRun','GenPlot'])
-		self.driver.workflow.add(['config','Weight_buildup','Static_margin','CDp','simRun','GenPlot'])
+		#self.driver.workflow.add(['config','Weight_buildup','Static_margin','CDp','simRun','GenPlot'])
+  		self.driver.workflow.add(['config','Weight_buildup','Static_margin','CDp','avlsurflist','avlgeogen','exec2','simRun','GenPlot'])
+  
 
 		# Hooking up the components
 
 		# config's outputs
 		#self.connect('config.S_wing',['Weight_buildup.S_wing','Static_margin.S_wing','CDp.S_wing','simRun.S_wing'])
-		self.connect('config.S_wing',['Weight_buildup.S_wing','Static_margin.S_wing','CDp.S_wing','simRun.S_wing'])
+		self.connect('config.S_wing',['Weight_buildup.S_wing','Static_margin.S_wing','CDp.S_wing','simRun.S_wing','avlgeogen.sref'])
 		self.connect('config.S_ht',['Weight_buildup.S_ht','Static_margin.S_ht','CDp.S_ht'])
 		self.connect('config.S_vt',['Weight_buildup.S_vt','CDp.S_vt'])
-		self.connect('config.c_w',['Weight_buildup.c_w','Static_margin.c_w','CDp.c_wr','GenPlot.c_w'])
+		self.connect('config.c_w',['Weight_buildup.c_w','Static_margin.c_w','CDp.c_wr','GenPlot.c_w', 'avlsurflist.chord_root_wing', 'avlsurflist.chord_tip_wing'])
 		self.connect('config.b_ht',['Weight_buildup.b_ht','GenPlot.b_ht'])
 		self.connect('config.b_vt',['Weight_buildup.b_vt','GenPlot.b_vt'])
 		self.connect('config.AR_ht',['Static_margin.AR_ht'])
@@ -113,7 +122,7 @@ class MflyOpt(Assembly):
 		# Weight_buildup's outputs
 		
 		self.connect('Weight_buildup.W_0',['simRun.W_0'])
-		self.connect('Weight_buildup.x_cg',['simRun.x_cg','Static_margin.x_cg','GenPlot.x_cg'])
+		self.connect('Weight_buildup.x_cg',['simRun.x_cg','Static_margin.x_cg','GenPlot.x_cg','avlgeogen.xcg'])
 	
 
 
@@ -121,7 +130,9 @@ class MflyOpt(Assembly):
 
 		self.connect('CDp.Cd_p',['simRun.Cd_p'])
 
-		
+		# AVL
+		self.connect('avlsurflist.surfaces',['avlgeogen.surfaces'])
+		self.connect('avlgeogen.savefile',['exec2.infile'])
 
 
 

@@ -1,0 +1,1705 @@
+{
+"__length_1": 48711
+, "simulation_info": {
+    "OpenMDAO_Version": "0.10.1", 
+    "constants": {
+        "AR_w": 6.1, 
+        "CDp.Airfoil_t_over_c_tail": 0.123, 
+        "CDp.Airfoil_t_over_c_wing": 0.123, 
+        "CDp.directory": "", 
+        "CDp.force_fd": false, 
+        "CDp.missing_deriv_policy": "error", 
+        "GenPlot.directory": "", 
+        "GenPlot.force_fd": false, 
+        "GenPlot.missing_deriv_policy": "error", 
+        "Hgt_fuse": 8.0, 
+        "Len_fuse": 23.9, 
+        "Static_margin.directory": "", 
+        "Static_margin.force_fd": false, 
+        "Static_margin.missing_deriv_policy": "error", 
+        "W_payload": 23.5, 
+        "Weight_buildup.Airfoil_t_over_c_tail": 0.123, 
+        "Weight_buildup.Airfoil_t_over_c_wing": 0.123, 
+        "Weight_buildup.Alum2024Dens": 0.1, 
+        "Weight_buildup.BalsaDens": 0.00653, 
+        "Weight_buildup.BassDens": 0.0165, 
+        "Weight_buildup.BatteryWeight": 1.01, 
+        "Weight_buildup.ESCWeight": 0.32, 
+        "Weight_buildup.EngWeight": 0.88, 
+        "Weight_buildup.SpruceDens": 0.015, 
+        "Weight_buildup.directory": "", 
+        "Weight_buildup.force_fd": false, 
+        "Weight_buildup.missing_deriv_policy": "error", 
+        "Weight_buildup.x_engine_cg": 1.2, 
+        "Wid_fuse": 4.5, 
+        "avlgeogen.cdp": 0.0098379, 
+        "avlgeogen.cref": 1.13627, 
+        "avlgeogen.directory": "", 
+        "avlgeogen.force_fd": false, 
+        "avlgeogen.mach": 0.0, 
+        "avlgeogen.missing_deriv_policy": "error", 
+        "avlgeogen.name": "avlgeogen", 
+        "avlgeogen.yaxis_symmetry": "Asymmetric", 
+        "avlgeogen.ycg": 0.0, 
+        "avlgeogen.zaxis_symmetry": "Symmetric", 
+        "avlgeogen.zcg": 0.0, 
+        "avlsurflist.ail_gain": -1.0, 
+        "avlsurflist.ail_hvec_x": 0.0, 
+        "avlsurflist.ail_hvec_y": 1.62, 
+        "avlsurflist.ail_hvec_z": 0.199, 
+        "avlsurflist.ail_sgndup": -2.0, 
+        "avlsurflist.ail_xhinge": 0.725, 
+        "avlsurflist.ainc_ail_end": 0.0, 
+        "avlsurflist.ainc_ail_start": 0.0, 
+        "avlsurflist.ainc_root_htail": 0.0, 
+        "avlsurflist.ainc_root_vtail": 0.0, 
+        "avlsurflist.ainc_root_wing": 0.0, 
+        "avlsurflist.ainc_tip_htail": 0.0, 
+        "avlsurflist.ainc_tip_vtail": 0.0, 
+        "avlsurflist.ainc_tip_wing": 0.0, 
+        "avlsurflist.chord_ail_end": 1.136, 
+        "avlsurflist.chord_ail_start": 1.136, 
+        "avlsurflist.directory": "", 
+        "avlsurflist.elev_gain": 1.0, 
+        "avlsurflist.elev_hvec_x": 0.0, 
+        "avlsurflist.elev_hvec_y": 1.0, 
+        "avlsurflist.elev_hvec_z": 0.0, 
+        "avlsurflist.elev_sgndup": 1.0, 
+        "avlsurflist.elev_xhinge": 0.5, 
+        "avlsurflist.force_fd": false, 
+        "avlsurflist.htail_cspace": 1.0, 
+        "avlsurflist.htail_nchord": 10.0, 
+        "avlsurflist.htail_nspan": 25.0, 
+        "avlsurflist.htail_sspace": 1.0, 
+        "avlsurflist.missing_deriv_policy": "error", 
+        "avlsurflist.rud_gain": 1.0, 
+        "avlsurflist.rud_hvec_x": 0.0, 
+        "avlsurflist.rud_hvec_y": 0.0, 
+        "avlsurflist.rud_hvec_z": 1.0, 
+        "avlsurflist.rud_sgndup": 1.0, 
+        "avlsurflist.rud_xhinge": 0.5, 
+        "avlsurflist.vtail_cspace": 1.0, 
+        "avlsurflist.vtail_nchord": 10.0, 
+        "avlsurflist.vtail_nspan": 10.0, 
+        "avlsurflist.vtail_sspace": 0.0, 
+        "avlsurflist.wing_cspace": 1.0, 
+        "avlsurflist.wing_nchord": 10.0, 
+        "avlsurflist.wing_nspan": 40.0, 
+        "avlsurflist.wing_sspace": -2.0, 
+        "avlsurflist.yle_ail_end": 4.67, 
+        "avlsurflist.yle_ail_start": 3.059, 
+        "avlsurflist.yle_root_htail": 0.0, 
+        "avlsurflist.yle_root_vtail": 1.6, 
+        "avlsurflist.yle_root_wing": 0.0, 
+        "avlsurflist.yle_tip_htail": 1.6, 
+        "avlsurflist.yle_tip_vtail": 1.6, 
+        "avlsurflist.yle_tip_wing": 5.02, 
+        "avlsurflist.zle_ail_end": 0.487, 
+        "avlsurflist.zle_ail_start": 0.289, 
+        "avlsurflist.zle_root_htail": 0.51, 
+        "avlsurflist.zle_root_vtail": 0.51, 
+        "avlsurflist.zle_root_wing": 0.0, 
+        "avlsurflist.zle_tip_htail": 0.51, 
+        "avlsurflist.zle_tip_vtail": 1.41, 
+        "avlsurflist.zle_tip_wing": 0.5291, 
+        "b_w": 8.4, 
+        "c_ht": 0.5, 
+        "c_vt": 0.5, 
+        "config.directory": "", 
+        "config.force_fd": false, 
+        "config.missing_deriv_policy": "error", 
+        "directory": "", 
+        "driver.accuracy": 1e-06, 
+        "driver.directory": "", 
+        "driver.force_fd": false, 
+        "driver.gradient_options.derivative_direction": "auto", 
+        "driver.gradient_options.directional_fd": false, 
+        "driver.gradient_options.fd_blocks": [], 
+        "driver.gradient_options.fd_form": "forward", 
+        "driver.gradient_options.fd_step": 1e-06, 
+        "driver.gradient_options.fd_step_type": "absolute", 
+        "driver.gradient_options.force_fd": false, 
+        "driver.gradient_options.gmres_maxiter": 100, 
+        "driver.gradient_options.gmres_tolerance": 1e-09, 
+        "driver.iout": 6, 
+        "driver.iprint": 0, 
+        "driver.maxiter": 500, 
+        "driver.output_filename": "slsqp.out", 
+        "excludes": [], 
+        "exec2.directory": "", 
+        "exec2.force_fd": false, 
+        "exec2.missing_deriv_policy": "error", 
+        "force_fd": false, 
+        "includes": [
+            "*"
+        ], 
+        "missing_deriv_policy": "assume_zero", 
+        "simRun.Cm_w": -0.23, 
+        "simRun.airDens": 0.002329, 
+        "simRun.c_w": 1.0, 
+        "simRun.directory": "", 
+        "simRun.force_fd": false, 
+        "simRun.h_wing": 10.5, 
+        "simRun.missing_deriv_policy": "error", 
+        "simRun.mu_k": 0.035, 
+        "x_cg_payload": 0.7, 
+        "x_tLE": 3.0, 
+        "x_wLE": 0.3917
+    }, 
+    "expressions": {
+        "(x_tLE+max(c_vt,c_ht)+0.373) + b_w + max(1.20,config.b_vt+Hgt_fuse/12) - 14.583 <= 0.0": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_18"
+        }, 
+        "-W_payload": {
+            "data_type": "Objective", 
+            "pcomp_name": "_pseudo_28"
+        }, 
+        "Len_fuse/12 >= x_wLE+config.c_w": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_21"
+        }, 
+        "Static_margin.SM - 0.13 >= 0.0": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_20"
+        }, 
+        "Weight_buildup.W_0 <= 65.0": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_19"
+        }, 
+        "c_ht >= 0.0": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_24"
+        }, 
+        "c_vt >= 0.0": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_25"
+        }, 
+        "config.b_ht <= b_w": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_23"
+        }, 
+        "simRun.Lift_takeoff  - simRun.W_0 * 1.05 >= 0.0": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_26"
+        }, 
+        "simRun.dist >= 130.0": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_27"
+        }, 
+        "x_wLE+config.c_w <= x_tLE": {
+            "data_type": "Constraint", 
+            "pcomp_name": "_pseudo_22"
+        }
+    }, 
+    "name": "", 
+    "uuid": "bdf74afe-8018-11e4-93a2-08002760b282", 
+    "variable_metadata": {
+        "AR_w": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "CDp.Airfoil_t_over_c_tail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "CDp.Airfoil_t_over_c_wing": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "CDp.Cd_p": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "CDp.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "CDp.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "CDp.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "CDp.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "CDp.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "CDp.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "GenPlot.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "GenPlot.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "GenPlot.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "GenPlot.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "GenPlot.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "GenPlot.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "Hgt_fuse": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "inch", 
+            "vartypename": "Float"
+        }, 
+        "Len_fuse": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "inch", 
+            "vartypename": "Float"
+        }, 
+        "Static_margin.SM": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "Static_margin.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "Static_margin.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "Static_margin.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "Static_margin.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "Static_margin.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "Static_margin.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "W_payload": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "lb", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.Airfoil_t_over_c_tail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.Airfoil_t_over_c_wing": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.Alum2024Dens": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "lb/inch**3", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.BalsaDens": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "lb/inch**3", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.BassDens": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "lb/inch**3", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.BatteryWeight": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "lb", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.ESCWeight": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "lb", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.EngWeight": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "lb", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.I_y": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "slug*ft**2", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.SpruceDens": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "lb/inch**3", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.W_0": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "lb", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.W_empty": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "lb", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "Weight_buildup.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "Weight_buildup.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "Weight_buildup.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "Weight_buildup.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "Weight_buildup.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "Weight_buildup.x_cg": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "inch", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.x_cg_empty": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "inch", 
+            "vartypename": "Float"
+        }, 
+        "Weight_buildup.x_engine_cg": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "inch", 
+            "vartypename": "Float"
+        }, 
+        "Wid_fuse": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "inch", 
+            "vartypename": "Float"
+        }, 
+        "avlgeogen.cdp": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlgeogen.cref": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlgeogen.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "avlgeogen.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "avlgeogen.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "avlgeogen.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "avlgeogen.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "avlgeogen.mach": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlgeogen.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "avlgeogen.name": {
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "avlgeogen.savefile": {
+            "iotype": "out", 
+            "vartypename": "File"
+        }, 
+        "avlgeogen.yaxis_symmetry": {
+            "assumed_default": false, 
+            "iotype": "in", 
+            "values": [
+                "Symmetric", 
+                "Antisymmetric", 
+                "Asymmetric"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "avlgeogen.ycg": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlgeogen.zaxis_symmetry": {
+            "assumed_default": false, 
+            "iotype": "in", 
+            "values": [
+                "Symmetric", 
+                "Antisymmetric", 
+                "Asymmetric"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "avlgeogen.zcg": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ail_gain": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ail_hvec_x": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ail_hvec_y": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ail_hvec_z": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ail_sgndup": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ail_xhinge": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ainc_ail_end": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ainc_ail_start": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ainc_root_htail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ainc_root_vtail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ainc_root_wing": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ainc_tip_htail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ainc_tip_vtail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.ainc_tip_wing": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.chord_ail_end": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.chord_ail_start": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "avlsurflist.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "avlsurflist.elev_gain": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.elev_hvec_x": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.elev_hvec_y": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.elev_hvec_z": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.elev_sgndup": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.elev_xhinge": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "avlsurflist.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "avlsurflist.htail_cspace": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.htail_nchord": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.htail_nspan": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.htail_sspace": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "avlsurflist.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "avlsurflist.rud_gain": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.rud_hvec_x": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.rud_hvec_y": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.rud_hvec_z": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.rud_sgndup": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.rud_xhinge": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.surfaces": {
+            "copy": "deep", 
+            "iotype": "out", 
+            "vartypename": "List"
+        }, 
+        "avlsurflist.vtail_cspace": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.vtail_nchord": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.vtail_nspan": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.vtail_sspace": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.wing_cspace": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.wing_nchord": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.wing_nspan": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.wing_sspace": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.yle_ail_end": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.yle_ail_start": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.yle_root_htail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.yle_root_vtail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.yle_root_wing": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.yle_tip_htail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.yle_tip_vtail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.yle_tip_wing": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.zle_ail_end": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.zle_ail_start": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.zle_root_htail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.zle_root_vtail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.zle_root_wing": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.zle_tip_htail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.zle_tip_vtail": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "avlsurflist.zle_tip_wing": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "b_w": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "c_ht": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "c_vt": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "config.AR_ht": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "config.S_ht": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "ft**2", 
+            "vartypename": "Float"
+        }, 
+        "config.S_vt": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "ft**2", 
+            "vartypename": "Float"
+        }, 
+        "config.S_wing": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "ft**2", 
+            "vartypename": "Float"
+        }, 
+        "config.b_ht": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "config.b_vt": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "config.c_w": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "config.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "config.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "config.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "config.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "config.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "config.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "driver.accuracy": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "driver.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "driver.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "driver.gradient_options.derivative_direction": {
+            "assumed_default": false, 
+            "iotype": "in", 
+            "values": [
+                "auto", 
+                "forward", 
+                "adjoint"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "driver.gradient_options.directional_fd": {
+            "assumed_default": false, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "driver.gradient_options.fd_blocks": {
+            "copy": "deep", 
+            "iotype": "in", 
+            "vartypename": "List"
+        }, 
+        "driver.gradient_options.fd_form": {
+            "assumed_default": false, 
+            "iotype": "in", 
+            "values": [
+                "forward", 
+                "backward", 
+                "central", 
+                "complex_step"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "driver.gradient_options.fd_step": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "driver.gradient_options.fd_step_type": {
+            "assumed_default": false, 
+            "iotype": "in", 
+            "values": [
+                "absolute", 
+                "relative", 
+                "bounds_scaled"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "driver.gradient_options.force_fd": {
+            "assumed_default": false, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "driver.gradient_options.gmres_maxiter": {
+            "assumed_default": false, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "in", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "driver.gradient_options.gmres_tolerance": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "driver.iout": {
+            "assumed_default": false, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "in", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "driver.iprint": {
+            "assumed_default": false, 
+            "iotype": "in", 
+            "values": [
+                0, 
+                1, 
+                2, 
+                3
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "driver.maxiter": {
+            "assumed_default": false, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "in", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "driver.output_filename": {
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "excludes": {
+            "copy": "deep", 
+            "iotype": "in", 
+            "vartypename": "List"
+        }, 
+        "exec2.cdi": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "exec2.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "exec2.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "exec2.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "exec2.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "exec2.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "exec2.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "includes": {
+            "copy": "deep", 
+            "iotype": "in", 
+            "vartypename": "List"
+        }, 
+        "missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "simRun.CL": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "simRun.Cm_w": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "simRun.K": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "simRun.Lift_takeoff": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "lb", 
+            "vartypename": "Float"
+        }, 
+        "simRun.V_takeoff": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "units": "ft/s", 
+            "vartypename": "Float"
+        }, 
+        "simRun.airDens": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "slug/ft**3", 
+            "vartypename": "Float"
+        }, 
+        "simRun.c_w": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "simRun.derivative_exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "simRun.directory": {
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Str"
+        }, 
+        "simRun.dist": {
+            "assumed_default": true, 
+            "high": null, 
+            "iotype": "out", 
+            "low": null, 
+            "unit": "ft", 
+            "vartypename": "Float"
+        }, 
+        "simRun.exec_count": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "exclude_high": false, 
+            "exclude_low": false, 
+            "high": 9223372036854775807, 
+            "iotype": "out", 
+            "low": -9223372036854775807, 
+            "vartypename": "Int"
+        }, 
+        "simRun.force_fd": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "vartypename": "Bool"
+        }, 
+        "simRun.h_wing": {
+            "assumed_default": false, 
+            "decs": "height of wing", 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "inch", 
+            "vartypename": "Float"
+        }, 
+        "simRun.itername": {
+            "deriv_ignore": true, 
+            "iotype": "out", 
+            "vartypename": "Str"
+        }, 
+        "simRun.missing_deriv_policy": {
+            "assumed_default": false, 
+            "deriv_ignore": true, 
+            "iotype": "in", 
+            "values": [
+                "error", 
+                "assume_zero"
+            ], 
+            "vartypename": "Enum"
+        }, 
+        "simRun.mu_k": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "vartypename": "Float"
+        }, 
+        "x_cg_payload": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "x_tLE": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }, 
+        "x_wLE": {
+            "assumed_default": false, 
+            "high": null, 
+            "iotype": "in", 
+            "low": null, 
+            "units": "ft", 
+            "vartypename": "Float"
+        }
+    }
+}
+, "__length_2": 3029
+, "driver_info_1": {
+    "_id": 77431824, 
+    "eq_constraints": [], 
+    "ineq_constraints": [
+        "(x_tLE+max(c_vt,c_ht)+0.373) + b_w + max(1.20,config.b_vt+Hgt_fuse/12) - 14.583 <= 0.0", 
+        "Weight_buildup.W_0 <= 65.0", 
+        "Static_margin.SM - 0.13 >= 0.0", 
+        "Len_fuse/12 >= x_wLE+config.c_w", 
+        "x_wLE+config.c_w <= x_tLE", 
+        "config.b_ht <= b_w", 
+        "c_ht >= 0.0", 
+        "c_vt >= 0.0", 
+        "simRun.Lift_takeoff  - simRun.W_0 * 1.05 >= 0.0", 
+        "simRun.dist >= 130.0"
+    ], 
+    "name": "driver", 
+    "objectives": [
+        "-W_payload"
+    ], 
+    "parameters": [
+        "b_w", 
+        "c_vt", 
+        "c_ht", 
+        "AR_w", 
+        "x_wLE", 
+        "x_tLE", 
+        "Len_fuse", 
+        "Wid_fuse", 
+        "Hgt_fuse", 
+        "W_payload", 
+        "x_cg_payload"
+    ], 
+    "recording": [
+        "wingspan", 
+        "vertical tail chord", 
+        "horizontal tail chord", 
+        "Wing aspect ratio", 
+        "wing leading edge position", 
+        "tail leading edge position", 
+        "fuselage length", 
+        "fuselage width", 
+        "fuselage height", 
+        "payload weight", 
+        "payload location", 
+        "_pseudo_28", 
+        "_pseudo_18", 
+        "_pseudo_19", 
+        "_pseudo_20", 
+        "_pseudo_21", 
+        "_pseudo_22", 
+        "_pseudo_23", 
+        "_pseudo_24", 
+        "_pseudo_25", 
+        "_pseudo_26", 
+        "_pseudo_27", 
+        "config.b_vt", 
+        "config.S_wing", 
+        "config.S_ht", 
+        "Static_margin.SM", 
+        "Weight_buildup.W_0", 
+        "config.S_vt", 
+        "config.c_w", 
+        "config.b_ht", 
+        "simRun.Lift_takeoff", 
+        "config.AR_ht", 
+        "Weight_buildup.x_cg", 
+        "simRun.dist", 
+        "CDp.Cd_p", 
+        "config.exec_count", 
+        "config.derivative_exec_count", 
+        "config.itername", 
+        "Weight_buildup.W_empty", 
+        "Weight_buildup.x_cg_empty", 
+        "Weight_buildup.exec_count", 
+        "Weight_buildup.derivative_exec_count", 
+        "Weight_buildup.I_y", 
+        "Weight_buildup.itername", 
+        "Static_margin.derivative_exec_count", 
+        "Static_margin.exec_count", 
+        "Static_margin.itername", 
+        "CDp.derivative_exec_count", 
+        "CDp.exec_count", 
+        "CDp.itername", 
+        "avlsurflist.derivative_exec_count", 
+        "avlsurflist.exec_count", 
+        "avlsurflist.surfaces", 
+        "avlsurflist.itername", 
+        "avlgeogen.derivative_exec_count", 
+        "avlgeogen.savefile", 
+        "avlgeogen.itername", 
+        "avlgeogen.exec_count", 
+        "exec2.derivative_exec_count", 
+        "exec2.exec_count", 
+        "exec2.cdi", 
+        "exec2.itername", 
+        "simRun.CL", 
+        "simRun.exec_count", 
+        "simRun.V_takeoff", 
+        "simRun.derivative_exec_count", 
+        "simRun.itername", 
+        "simRun.K", 
+        "GenPlot.derivative_exec_count", 
+        "GenPlot.exec_count", 
+        "GenPlot.itername", 
+        "driver.workflow.itername"
+    ]
+}
+}
