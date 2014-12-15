@@ -18,16 +18,16 @@ class AVLGeo(Component):
 						("Symmetric", "Antisymmetric", "Asymmetric"),
 						iotype = 'in')
 	zaxis_symmetry = Enum(
-						"Symmetric", 
+						"Asymmetric", 
 						("Symmetric", "Antisymmetric", "Asymmetric"),
 						iotype = 'in')
-	sref = Float(11.5244, iotype = 'in', desc = "planform Wing Area")
-	cref = Float(1.13627, iotype = 'in', desc = "cbar")
-	bref = Float(10.142, iotype = 'in', desc = "wing span")
-	xcg = Float(0.31, iotype = 'in', desc = "center of mass on the x")
+	sref = Float(13.17, iotype = 'in', desc = "planform Wing Area")
+	cref = Float(1.505, iotype = 'in', desc = "cbar")
+	bref = Float(8.75, iotype = 'in', desc = "wing span")
+	xcg = Float(0.41, iotype = 'in', desc = "center of mass on the x")
 	ycg = Float(0.00, iotype = 'in', desc = "center of mass on the y")
 	zcg = Float(0.00, iotype = 'in', desc = "center of mass on the z")
-	cdp = Float(0.0098379, iotype = 'in', desc = "coeff parasitic drag")
+	cdp = Float(0.00, iotype = 'in', desc = "coeff parasitic drag")
 	surfaces = List( Slot(AVLSurface), iotype = 'in', desc = "surfaces")
 	savefile = File(iotype = 'out', 
 					desc = "The file in which the geometry was written")
@@ -81,8 +81,7 @@ class AVLGeo(Component):
 						str(section.zle) + "   " +
 						str(section.chord) + "   " +
 						str(section.ainc) + "\n")
-					out.write("NACA\n")
-					out.write(str(section.NACA) + "\n")
+					out.write(str(section.definition) + "\n")
 					if section.hascontrol == True:
 						out.write("\nCONTROL\n")
 						out.write(str(section.ControlSurface.surface) +

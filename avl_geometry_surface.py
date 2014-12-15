@@ -21,7 +21,7 @@ class AVLSection:
 	zle = 0.0
 	chord = 1.13627
 	ainc = 0.0
-	NACA = 4412
+	definition = "s1223.dat"
 	hascontrol = True
 	ControlSurface = AVLControlSurface(
 									"Aileron",
@@ -37,14 +37,14 @@ class AVLSection:
 				zle, 
 				chord, 
 				ainc, 
-				naca, 
+				definition, 
 				ctlsurf=AVLControlSurface("NONE",0,0,0,0,0,0)):
 		self.xle = xle
 		self.yle = yle
 		self.zle = zle
 		self.chord = chord
 		self.ainc = ainc
-		self.NACA = naca
+		self.definition = definition
 		self.ControlSurface = ctlsurf
 		if self.ControlSurface.surface == "NONE":
 			self.hascontrol = False
